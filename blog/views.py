@@ -33,7 +33,7 @@ def contact_form(request):
 
             try:
                 send_mail('【Portfolio Contact】' + subject,
-                '【from】' + str(sender) + '\n' + '【category】' + category + '\n\n' + message,
+                '【from】' + str(sender) + '\n' + '【name】' + subject + '\n' + '【category】' + category + '\n\n' + message,
                 sender,
                 recipients)
             except BadHeaderError:
