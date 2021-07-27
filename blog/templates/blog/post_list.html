@@ -1,0 +1,140 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="content container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1 id="Profile">Profile</h1>
+            <img src="{% static 'images/topimg1a.jpg' %}" class="img-fluid">
+            <p> </p>
+            <table class="table">
+                <tbody>
+                    <tr>
+                        <th scope="row">名前</th>
+                        <td>トモコ</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">プログラミングのキャリア</th>
+                        <td>未経験</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">プログラミングの学習方法</th>
+                        <td>Progate、参考書、Qiita等を利用しながらの独学です。<br>
+                        自分が欲しいサービスを作成しながら学習しています。</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">プログラミングに興味を持ったきっかけ
+                        </th>
+                        <td>派遣でのデータ入力業務の際、社員の方が作成したExcel VBAのツールを利用したことです。<br>
+                        業務効率の大幅アップを実感し、感動しました。</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">次に作成予定のサービス</th>
+                        <td>
+                            <li>献立提案サイト</li>
+                            <li>スクレイピングを利用したデータまとめサイト</li>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">趣味</th>
+                        <td>一眼レフでの写真撮影、大相撲観戦</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <h1 id="Skill">Skill</h1>
+        </div>
+    </div>
+    <div class="row row-cols-1 row-cols-md-3 g-3">
+        <div class="col">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h5 class="card-title">フロントエンド</h5>
+                    <p> </p>
+                    <ul>
+                        <li class="card-text">HTML</li>
+                        <li class="card-text">CSS</li>
+                        <li class="card-text">JavaScript</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h5 class="card-title">バックエンド</h5>
+                    <p> </p>
+                    <ul>
+                        <li class="card-text">Python</li>
+                    </ul>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h5 class="card-title">フレームワーク</h5>
+                    <p> </p>
+                    <ul>
+                        <li class="card-text">Django</li>
+                        <li class="card-text">Bootstrap</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h5 class="card-title">利用中のWebサービス</h5>
+                    <p> </p>
+                    <ul>
+                        <li class="card-text">Pythonanywhere</li>
+                        <li class="card-text">GitHub</li>
+                        <li class="card-text">Heroku</li>
+                        <li class="card-text">LINE Messaging API</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h5 class="card-title">その他</h5>
+                    <p> </p>
+                    <ul>
+                        <li class="card-text">WordPress</li>
+                        <li class="card-text">Excel VBA</li>
+                        <li class="card-text">ディープラーニング</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <h1 id="Works">Works</h1>
+            <img src="{% static 'images/topimg2a.jpg' %}" class="img-fluid">
+            <p> </p>
+            {% for post in posts %}
+                <div class="post">
+                    <div class="date">
+                        {{ post.published_date }}
+                    </div>
+                    <h4><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h4>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <h1 id="Contact">Contact</h1>
+            <h4><a href="{% url 'contact_form' %}">こちらから</a></h4>
+        </div>
+    </div>
+</div>
+{% endblock %}

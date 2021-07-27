@@ -1,0 +1,10 @@
+*.pyc
+*~
+/.vscode
+__pycache__
+/myvenv3.9
+db.sqlite3
+/static
+.DS_Store
+.env
+/media

@@ -1,0 +1,54 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <title>Push Timer</title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static 'timer/push_timer.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/toggle_switch.css' %}">
+    <link rel="icon" type="image/png" href="{% static 'images/snow_icon.png' %}">
+  </head>
+  <body>
+    <div class='timer_box'>
+      <h2>Push Timer</h2>
+      <div class='toggle_box'>
+        <span class='mgr-10'>
+          <label class='toggle_switch'>
+            <input type='checkbox' id='sound_swith' checked="checked">
+            <span class='slider round'></span>
+          </label>
+        </span>
+        <p>サウンド通知</p>
+      </div>
+      <div class='toggle_box'>
+        <span class='mgr-10'>
+          <label class='toggle_switch'>
+            <input type='checkbox' id='notification_swith'>
+            <span class='slider round'></span>
+          </label>
+        </span>
+        <p>プッシュ通知</p>
+      </div>      
+      <div class='input_box'>
+        <input type='number' min='0' max='99' id='min_display' placeholder=0>
+        <p><span class='mgr-20'>分</span></p>
+        <input type='number' min='0' max='59' id='sec_display' placeholder=0>
+        <p>秒</p>
+      </div>
+      <div class='button_box'>
+        <button id='start_stop_button'>start</button>
+        <button id='reset_button'>reset</button>
+      </div>
+    </div>
+    <script type="text/javascript" src="{% static 'timer/push_timer.js' %}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/push.js/0.0.11/push.min.js"></script>
+    <audio src="{% static 'timer/alarm.mp3' %}" id = "sound"></audio>
+  </body>
+</html>
