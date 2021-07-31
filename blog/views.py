@@ -10,6 +10,9 @@ from django.core.mail import BadHeaderError, send_mail
 def top(request):
     return render(request, 'blog/top.html', {})
 
+def portfolio(request):
+    return render(request, 'works/portfolio.html', {})
+
 def push_timer(request):
     return render(request, 'timer/push_timer.html', {})
 

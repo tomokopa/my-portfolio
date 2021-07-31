@@ -1,0 +1,128 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="content container">
+    <div class="row">
+        <div class="col-md-12">
+            <h2 class="fw-normal">ポートフォリオサイト（当サイト）</h2>
+            <p> </p>
+            <img src="{% static 'images/portfolio.jpg' %}" class="img-fluid">
+            <p> </p>
+        </div>
+    </div>
+    <div class="row works_block">
+        <div class="col-md-12">
+            <h3 class="fw-normal p-2 mb-2 bg-light text-dark border">サービス概要</h3>
+            <p> </p>
+            <p>当サイトでは私（トモコ）の作成したWebサービスを御確認いただけます。</p>
+        </div>
+    </div>
+    <div class="row works_block">
+        <div class="col-md-12">
+            <h3 class="fw-normal p-2 mb-2 bg-light text-dark border">サービス作成理由</h3>
+            <p> </p>
+            <ul>
+                <li>私に興味を持ってくださった方にスキルや実績を知っていただくため。</li>
+                <li>当サイトの作成を通して、Webサービス関連の仕組み（サーバーへのデプロイやフレームワークなど）について学びたかったため。</li>
+            </ul>
+        </div>
+    </div>
+    <div class="row works_block">
+        <div class="col-md-12">
+            <h3 class="fw-normal p-2 mb-2 bg-light text-dark border">苦労した点・こだわりの点</h3>
+            <p> </p>
+            <div>
+                <h4 class="fw-normal">レスポンシブルデザイン</h4>
+                <p>レスポンシブルデザインを意識し、素早く導入可能なフレームワーク「Bootstrap」を活用しております。<br>
+                    パソコンとスマートフォンの両方で確認しながら作成しました。<br>
+                    Bootstrapの機能を利用した主な箇所は、</p>
+                <ul>
+                    <li>ナビゲーションバー（ヘッダー）</li>
+                    <li>テーブル（Profile）</li>
+                    <li>カード（Skill）</li>
+                    <li>フォーム（Contact）</li>
+                </ul>
+                <p>です。</p>
+            </div>
+            <hr>
+            <div>
+                <h4 class="fw-normal">コンタクトフォームの設置</h4>
+                <p>ポートフォリオ内にコンタクトフォームを設置しました。<br>
+                    お問い合わせ内容はgmailで受け取ります。</p>
+                <p>設置を通して、サーバーからデータを受け取る方法を学びました。</p>
+            </div>
+            <hr>
+            <div>
+                <h4 class="fw-normal">.envファイルからの環境変数の読み込み</h4>
+                <p>python-dotenvモジュールをインストールすることで、ローカル環境と本番環境でそれぞれの.envファイルから環境変数を読み込むようにしました。<br>
+                これにより、環境変数をコンソールに打ち込む手間が減らすことが出来ました。</p>
+                <p>本番環境であるPythonanywhereへの.envファイルの適用方法がなかなか分からず、苦労しました。<br>
+                Pythonanywhereの公式サイトのヘルプページがとても参考になりました。</p>
+                <p><a href="https://help.pythonanywhere.com/pages/environment-variables-for-web-apps/" target="_blank" rel="noopener">The PythonAnywhere help pages</a></p>
+                <p>この作業を進めるうちに、Git、Github、.gitignoreの理解を進めることが出来ました。</p>
+            </div>
+        </div>
+    </div>
+    <div class="row works_block">
+        <div class="col-md-12">
+            <h3 class="fw-normal p-2 mb-2 bg-light text-dark border">使用技術と選定理由</h3>
+            <p> </p>
+            <div>
+                <h4 class="fw-normal">Python 3.9</h4>
+                <p>Pythonは初めて本格的に学習した言語であり、知識があるため。<br>
+                    Pythonを学習した理由は、</p>
+                    <ul>
+                        <li>初心者でも学びやすい、という情報をインターネットから得たこと</li>
+                        <li>機械学習に興味があったこと</li>
+                    </ul>
+                <p>です。<br>
+                    バージョンは、Pythonanywhereが対応しているバージョンの中で開発時に最新だった3.9を選定しました。</p>
+            </div>
+            <hr>
+            <div>
+                <h4 class="fw-normal">Django 2.2.4</h4>
+                <p>PythonのWebフレームワークの中で、Djangoはチュートリアルや解説サイトが多かったため。<br>
+                    バージョンは、参照したDjangoのチュートリアルで使用されていた2.2.4を選定しました。</p>
+            </div>
+            <hr>
+            <div>
+                <h4 class="fw-normal">Bootstrap5</h4>
+                <p>参照したDjangoのチュートリアルで紹介されていたため。<br>
+                    また、実際に試したところレスポンシブルデザインが簡単に素早く導入可能で、公式の解説用ドキュメントも充実していました。<br>
+                    バージョンは開発時に最新だった5を選定しました。</p>
+            </div>
+            <hr>
+            <div>
+                <h4 class="fw-normal">Pythonanywhere</h4>
+                <p>参照したDjangoのチュートリアルで紹介されており、無料で利用可能なサーバーだったため。<br>
+                    SSLの設定が簡単なことも魅力だと思いました。</p>
+            </div>
+            <hr>
+            <div>
+                <h4 class="fw-normal">GitHub</h4>
+                <p>参照したDjangoのチュートリアルで紹介されていたため。<br>
+                    GitHubからPythonanywhereにコードをプルすることでサイトを公開しています。<br>
+                    GitHubでWebサービスを公開し、そのコードも公開出来ることが便利だと思いました。</p>
+            </div>
+        </div>
+    </div>
+    <div class="row works_block">
+        <div class="col-md-12">
+            <h3 class="fw-normal p-2 mb-2 bg-light text-dark border">GitHub</h3>
+            <p> </p>
+            <p><a href="https://github.com/tomokopa/my-portfolio" target="_blank" rel="noopener">リンク</a></p>
+        </div>
+    </div>
+    <div class="row works_block">
+        <div class="col-md-12">
+            <h3 class="fw-normal p-2 mb-2 bg-light text-dark border">参考</h3>
+            <p> </p>
+            <ul>
+                <li><a href="https://tutorial.djangogirls.org/ja/" target="_blank" rel="noopener">Django Girls</a></li>
+                <li><a href="https://getbootstrap.jp/docs/5.0/getting-started/introduction/" target="_blank" rel="noopener">Bootstrap5</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+{% endblock %}
