@@ -13,6 +13,9 @@ def top(request):
 def works_portfolio(request):
     return render(request, 'works/portfolio.html', {})
 
+def works_push_timer(request):
+    return render(request, 'works/push_timer.html', {})
+
 def push_timer(request):
     return render(request, 'timer/push_timer.html', {})
 

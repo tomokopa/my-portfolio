@@ -1,0 +1,301 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="content container">
+    <div class="row">
+        <div class="col-md-12">
+            <h2 class="fw-normal">プッシュ通知タイマー</h2>
+            <p> </p>
+            <img src="{% static 'images/ptimag1.jpg' %}" class="img-fluid">
+            <p> </p>
+            <p>
+                オフィスでの仕事中にタイマーを使いたい。<br>
+                だけど、目覚まし時計みたいなアラーム音がしたら、近くにいる同僚達に迷惑をかけるよなぁ…<br>
+                かと言って、音量ゼロでタイマーをかけたら、時間になっても気付かないし…<br>
+                と、お悩みですか？
+            </p>
+            <p>
+                「Push Timer」なら、時間経過をブラウザのプッシュ通知でお知らせすることが可能です。<br>
+                こちらはWebサービスとなっておりますので、パソコンとインターネット環境さえあればすぐにご利用いただけます。<br>
+                ダウンロードなどの作業は不要です。
+            </p>
+            <p><a href="{% url 'push_timer' %}" target="_blank" rel="push_timer">Push Timerはこちらから</a></p>
+        </div>
+    </div>
+    <div class="row works_block">
+        <div class="col-md-12">
+            <h3 class="fw-normal p-2 mb-2 bg-light text-dark border">サービス概要</h3>
+            <p> </p>
+            <img src="{% static 'images/ptimag2.png' %}" class="img-fluid">
+            <p> </p>
+            <p>
+                このWebタイマーはブラウザのプッシュ通知で時間をお知らせします。<br>
+                プッシュ通知とは、ブラウザのポップアップ(例：上図の黒い背景のウィンドウ）とサウンドによる通知のことです。
+            </p>
+            <p>
+                また本サービスは、インターネットに接続したパソコンのブラウザでのみ利用可能なWebサービスとなっております。<br>
+                スマートフォンやタブレット等には対応していません。
+            </p>
+        </div>
+    </div>
+    <div class="row works_block">
+        <div class="col-md-12">
+            <h3 class="fw-normal p-2 mb-2 bg-light text-dark border">利用方法</h3>
+            <p> </p>
+            <p><a href="{% url 'push_timer' %}" target="_blank" rel="push_timer">Push Timerはこちらから</a></p>
+        </div>
+    </div>
+    <div class="row works_block">
+        <div class="col-md-12">
+            <h3 class="fw-normal p-2 mb-2 bg-light text-dark border">こんな方におすすめ</h3>
+            <p> </p>
+            <p>オフィスや公共の場でパソコンを使用する際に、周囲の人にあまり迷惑をかけないようにタイマーを使用したい方。</p>
+        </div>
+    </div>
+    <div class="row works_block">
+        <div class="col-md-12">
+            <h3 class="fw-normal p-2 mb-2 bg-light text-dark border">サービス詳細</h3>
+            <p> </p>
+            <div>
+                <h4 class="fw-normal">動作確認</h4>
+                <p>Windows10を用いて、以下のブラウザで行っています。</p>
+                    <ul>
+                        <li>Google Chrome</li>
+                        <li>Microsoft Edge</li>
+                    </ul>
+                <p>スマートフォンやタブレット等には対応していません。</p>
+            </div>
+            <hr>
+            <div>
+                <h4 class="fw-normal">サウンド通知</h4>
+                <p>
+                    ボタンが緑色のとき、タイマーがゼロになったことをサウンドで通知します。<br>
+                    （ボタンが灰色のときは、タイマーがゼロになっても通知をしません。）
+                </p>
+                <p>
+                    サウンドの音量は、お使いのパソコンのスピーカーにて調整してください。<br>
+                    スピーカーの音量がミュートの場合はサウンドは聞こえません。
+                </p>
+            </div>
+            <hr>
+            <div>
+                <h4 class="fw-normal">プッシュ通知</h4>
+                <p>
+                    ボタンが緑色のとき、タイマーがゼロになったことをプッシュ通知します。<br>
+                    プッシュ通知とは、ブラウザのポップアップとサウンドによる通知のことです。<br>
+                    （ボタンが灰色のときは、タイマーがゼロになってもプッシュ通知をしません。）
+                </p>
+                <p>
+                    サウンドの音量は、お使いのパソコンのスピーカーにて調整してください。<br>
+                    スピーカーの音量がミュートの場合はサウンドは聞こえませんが、ポップアップによる通知は行われます。
+                </p>
+            </div>
+            <hr>
+            <div>
+                <h4 class="fw-normal">表示ディスプレイ</h4>
+                <p>
+                    ここでタイマーの時間を設定してください。<br>
+                    設定しない、または0分0秒の場合は、startボタンを押してもタイマーは動きません。
+                </p>
+            </div>
+            <hr>
+            <div>
+                <h4 class="fw-normal">start</h4>
+                <p>タイマーが動作を開始します。</p>
+            </div>
+            <hr>
+            <div>
+                <h4 class="fw-normal">stop</h4>
+                <p>タイマーの動作中に、タイマーを一時停止します。</p>
+            </div>
+            <hr>
+            <div>
+                <h4 class="fw-normal">reset</h4>
+                <p>タイマーが動作中でないときに、表示ディスプレイ（〇分〇秒の部分）の値を0分0秒にします。</p>
+            </div>
+        </div>
+    </div>
+    <div class="row works_block">
+        <div class="col-md-12">
+            <h3 class="fw-normal p-2 mb-2 bg-light text-dark border">サービス作成理由</h3>
+            <p> </p>
+            <ul>
+                <li>タイマーアプリをつくってみたかったため</li>
+                <li>オフィスでも使える、アラーム音が控えめなタイマーが欲しかったため</li>
+                <li>avaScriptを実践しながら学びたかったため</li>
+            </ul>
+        </div>
+    </div>
+    <div class="row works_block">
+        <div class="col-md-12">
+            <h3 class="fw-normal p-2 mb-2 bg-light text-dark border">苦労した点・こだわりの点</h3>
+            <p> </p>
+            <div>
+                <h4 class="fw-normal">当タイマーの基本的な仕組み</h4>
+                <p>このタイマーの基本的な仕組みは、</p>
+                <ol>
+                    <li>残り時間を1秒減らす計算をする</li>
+                    <li>項目1の時間を表示する</li>
+                    <li>1秒程度処理を待機させる</li>
+                    <li>残り時間が0になるまで1～3を繰り返す</li>
+                    <li>残り時間が0になったら、サウンド通知、またはプッシュ通知を行う</li>
+                </ol>
+                <p>です。</p>
+                <p>
+                    これに各種ボタンと表示ディスプレイ（〇分〇秒の部分）を関連付けています。<br>
+                    ボタンについては、タイミングごとの有効・無効の管理・設定に苦労しました。<br>
+                    （例：一度startボタンを押したら、resetボタンを押すか、残り時間が0になるまで表示ディスプレイが変更できないようにする）
+                </p>
+            </div>
+            <hr>
+            <div>
+                <h4 class="fw-normal">JavaScript での非同期処理の理解・実践</h4>
+                <p>タイマー作成にあたり、JavaScriptの非同期処理等の学習をしました。<br>
+                    処理を指示した時間だけ待機させる自作関数sleepでは、
+                </p>
+                <ul>
+                    <li>promise</li>
+                    <li>setTimeout</li>
+                </ul>
+                <p>
+                    を使用しています。<br>
+                    また、タイマーを動かすための自作関数countdown等において、
+                </p>
+                <ul>
+                    <li>async</li>
+                    <li>await</li>
+                </ul>
+                <p>を使用しています。</p>
+            </div>
+            <hr>
+            <div>
+                <h4 class="fw-normal">誤差が小さいタイマー</h4>
+                <p>タイマーの誤差をなるべく小さくするよう、コードを工夫しています。</p>
+                <p>
+                    例として、このタイマーを10分（600000ミリ秒）にセットし、スタートボタンを押してからタイマーが0秒になるまでの時間の計測を5回行いました。<br>
+                    結果、平均は約10分０秒01となりました。<br>
+                    つまり、タイマーを10分にセットした場合の誤差は平均で約0秒01です。
+                </p>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">n回目</th>
+                            <th scope="col">Consoleのtotal_time[ミリ秒]</th>
+                        </tr>                        
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">1回目</th>
+                            <td>600011.299999997</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2回目</th>
+                            <td>600016.6000000089</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">3回目</th>
+                            <td>600012.799999997</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">4回目</th>
+                            <td>600008.3999999911</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">5回目</th>
+                            <td>600014.3999999911</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">平均</th>
+                            <td>600012.699999997</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p>
+                    このタイマーのコードでは、約1秒に1回、その時点で生じている遅れを計算しています。<br>
+                    そして遅れに合わせ、自作関数sleepによる待機時間を毎回変更しています。<br>
+                    遅れが大きければ待機時間を短く、遅れが小さければ待機時間を長くしています。<br>
+                    これにより、タイマーの誤差を小さくしています。
+                </p>
+                <p>また、現状ではブラウザのウィンドウの最小化やタブの切り替えをすると誤差が大きくなることが分かっていますが、対策は出来ていません。</p>
+            </div>
+            <hr>
+            <div>
+                <h4 class="fw-normal">デベロッパーツールのコンソールでの確認</h4>
+                <p>
+                    このタイマーのコードは、随所でデベロッパーツールのコンソールに状況やエラー理由を書き出すように設定されています。<br>
+                    コンソールを見ながらコードの確認をする際に便利です。
+                </p>
+            </div>
+            <hr>
+            <div>
+                <h4 class="fw-normal">プッシュ通知の実装</h4>
+                <p>
+                    フレームワーク「<a href="https://pushjs.org/">Push.js</a>」をCDN経由で読み込むことで、簡単にWebブラウザでのプッシュ通知を導入しました。
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="row works_block">
+        <div class="col-md-12">
+            <h3 class="fw-normal p-2 mb-2 bg-light text-dark border">使用技術と選定理由</h3>
+            <p> </p>
+            <div>
+                <h4 class="fw-normal">Python 3.9</h4>
+                <p>
+                    Pythonは初めて本格的に学習した言語であり、知識があるため。<br>
+                    Pythonを学習した理由は、
+                </p>
+                <ul>
+                    <li>初心者でも学びやすい、という情報をインターネットから得たこと</li>
+                    <li>機械学習に興味があったこと</li>
+                </ul>
+                <p>
+                    です。<br>
+                    バージョンは、Pythonanywhereが対応しているバージョンの中で開発時に最新だった3.9を選定しました。
+                </p>
+            </div>
+            <hr>
+            <div>
+                <h4 class="fw-normal">Django 2.2.4</h4>
+                <p>
+                    PythonのWebフレームワークの中で、Djangoはチュートリアルや解説サイトが多かったため。<br>
+                    バージョンは、参照したDjangoのチュートリアルで使用されていた2.2.4を選定しました。
+                </p>
+            </div>
+            <hr>
+            <div>
+                <h4 class="fw-normal">JavaScript</h4>
+                <p>
+                    Webタイマーの実現にあたり、フロントエンド側の動的な言語が必要だったため。<br>
+                    また、インターネット上でJavaScriptで作成したWebタイマーの解説サイトを多く見つけたため、独学でも実現しやすそうだと考えました。<br>
+                </p>
+            </div>
+            <hr>
+            <div>
+                <h4 class="fw-normal">Pythonanywhere</h4>
+                <p>
+                    参照したDjangoのチュートリアルで紹介されており、無料で利用可能なサーバーだったため。<br>
+                    SSLの設定が簡単なことも魅力だと思いました。
+                </p>
+            </div>
+            <hr>
+            <div>
+                <h4 class="fw-normal">GitHub</h4>
+                <p>
+                    参照したDjangoのチュートリアルで紹介されていたため。<br>
+                    GitHubからPythonanywhereにコードをプルすることでサイトを公開しています。<br>
+                    GitHubでWebサービスを公開し、そのコードも公開出来ることが便利だと思いました。
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="row works_block">
+        <div class="col-md-12">
+            <h3 class="fw-normal p-2 mb-2 bg-light text-dark border">GitHub</h3>
+            <p> </p>
+            <p><a href="https://github.com/tomokopa/my-portfolio" target="_blank" rel="noopener">リンク</a></p>
+        </div>
+    </div>
+</div>
+{% endblock %}
