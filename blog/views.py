@@ -16,6 +16,9 @@ def works_portfolio(request):
 def works_push_timer(request):
     return render(request, 'works/push_timer.html', {})
 
+def works_laundry_weather(request):
+    return render(request, 'works/laundry_weather.html', {})
+
 def push_timer(request):
     return render(request, 'timer/push_timer.html', {})
 
